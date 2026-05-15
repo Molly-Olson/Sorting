@@ -1,0 +1,61 @@
+﻿using System;
+using System.Collections.Generic;
+using System.Collections.Immutable;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
+
+namespace Sorting
+{
+    public class BozoSort : Sort
+    {
+        public BozoSort(Action<int[]> display) : base(display)
+        {
+
+        }
+        public override async Task<int[]> sort(int[] arr)
+        {
+            int[] sortedArray = new int[arr.Length];
+
+            Random rnd = new Random();
+            bool sorted = false;
+            while (!sorted)
+            {
+                var a = rnd.Next(arr.Length);
+                var b = rnd.Next(arr.Length);  // generating two random numbers
+
+                var t = arr[a];
+                arr[a] = arr[b];
+                arr[b] = t;  // BOZO sort must be in loop we're just swapping two random ellements this is a bad sorting method!
+                await Task.Delay(500);
+                displayFunc(arr);
+
+                if (isSorted(arr))
+                {
+                    sorted = true;
+                }
+            }
+
+            return arr;
+
+        }
+
+        // visual studio made me add this method, but I don't understand why since I have the other public static bool below
+        private bool isSorted(int[] arr)
+        {
+            throw new NotImplementedException();
+        }
+
+        public static bool isSorted(int[] a, int[] sorted)
+        {
+            for (int i = 0; i < a.Length; i++)
+            {
+                if (a[i] != sorted[i])
+                {
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+}
