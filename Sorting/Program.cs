@@ -28,16 +28,20 @@ namespace Sorting
 
         }
 
-        private static bool isSorted(int[] arr)
+        public static void printArr(int[] arr)
         {
-            throw new NotImplementedException();
-        }
+            Console.Clear();
+            for (int i = 0; i < arr.Length; i++)
+            {
+                Console.Write(arr[i] + " ");
+            }
 
-        public static bool isSorted(int[] a, int[] sorted)
+        }
+        public static bool isSorted(int[] a)
         {
             for (int i = 0; i < a.Length; i++)
             {
-                if (a[i] != sorted[i])
+                if (a[i] != a[i + 1])
                 {
                     return false;
                 }
@@ -46,16 +50,6 @@ namespace Sorting
         }
 
 
-        public static void printArr(int[] arr)
-        {
-            Console.Clear();
-            for (int i = 0; i < arr.Length; i++)
-            {
-                Console.Write(arr[i] + " ");
-            }
-            Console.WriteLine();
 
-        }
-       
     }
 }
