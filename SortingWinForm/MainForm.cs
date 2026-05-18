@@ -17,12 +17,15 @@ namespace SortingWinForm
         public MainForm()
         {
             InitializeComponent();
-            Sorting.BozoSort bs = new Sorting.BozoSort(displaySort);
+           // Sorting.BozoSort bs = new Sorting.BozoSort(displaySort);
+          // Sorting.MergeSort ms1 = new Sorting.MergeSort(displaySort);
+            Sorting.InsertionSort is1 = new Sorting.InsertionSort(displaySort);
 
             Random.Shared.Shuffle(testArr);  // shuffle the array before sorting
 
-            bs.sort(testArr);
-            
+            //  bs.sort(testArr);
+           // ms1.sort(testArr);
+            is1.sort(testArr);
         }
         public void displaySort(int[] arr)
         {
