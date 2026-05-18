@@ -41,16 +41,11 @@ namespace Sorting
         }
 
         // visual studio made me add this method, but I don't understand why since I have the other public static bool below
-        private bool isSorted(int[] arr)
+        public bool isSorted(int[] a)
         {
-            throw new NotImplementedException();
-        }
-
-        public static bool isSorted(int[] a, int[] sorted)
-        {
-            for (int i = 0; i < a.Length; i++)
+            for (int i = 0; i < a.Length -1;  i++)
             {
-                if (a[i] != sorted[i])
+                if (a[i] > a[i+1])
                 {
                     return false;
                 }
